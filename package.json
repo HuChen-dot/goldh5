@@ -7,10 +7,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "start": "NODE_ENV=production node server/index.js",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vercel/blob": "^2.3.3",
     "express": "^5.2.1",
     "pinia": "^2.1.0",
     "vue": "^3.4.0",

@@ -5,10 +5,17 @@ import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const DATA_FILE = join(__dirname, 'data', 'transactions.json')
-const PORT = 3003
+const PORT = parseInt(process.env.PORT || '3003', 10)
+const isProd = process.env.NODE_ENV === 'production'
 
 const app = express()
 app.use(express.json())
+
+// In production, serve built static files
+if (isProd) {
+  const staticDir = join(__dirname, '..', 'dist')
+  app.use(express.static(staticDir))
+}
 
 function readData() {
   try {
@@ -36,6 +43,13 @@ app.post('/api/transactions/save', (req, res) => {
   }
 })
 
+// SPA fallback: serve index.html for all non-API routes
+if (isProd) {
+  app.get('*', (req, res) => {
+    res.sendFile(join(process.cwd(), 'dist', 'index.html'))
+  })
+}
+
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`)
+  console.log(`Server running on http://localhost:${PORT} (${isProd ? 'production' : 'dev'})`)
 })
