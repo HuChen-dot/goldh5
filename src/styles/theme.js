@@ -1,0 +1,31 @@
+export const lightTheme = {
+  bg: '#F5F5F5',
+  surface: '#FFFFFF',
+  text: '#333333',
+  textSecondary: '#666666',
+  textTertiary: '#999999',
+  border: '#E8E8E8',
+  accent: '#D4AF37',
+  accentLight: '#F5D76E',
+  positive: '#27AE60',
+  negative: '#E74C3C',
+  overlay: 'rgba(0,0,0,0.4)',
+  inputBg: '#F8F8F8',
+  inputBorder: '#E8E8E8',
+}
+
+export const darkTheme = {
+  bg: '#121212',
+  surface: '#1E1E1E',
+  text: '#FFFFFF',
+  textSecondary: '#AAAAAA',
+  textTertiary: '#777777',
+  border: '#333333',
+  accent: '#D4AF37',
+  accentLight: '#F5D76E',
+  positive: '#27AE60',
+  negative: '#E74C3C',
+  overlay: 'rgba(0,0,0,0.6)',
+  inputBg: '#2A2A2A',
+  inputBorder: '#3A3A3A',
+}

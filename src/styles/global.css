@@ -1,0 +1,191 @@
+/* 全局样式 - 对应原 Swift Theme.swift 的视图修饰器 */
+/* 重置样式 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow: hidden;
+}
+
+#app {
+  height: 100%;
+}
+
+/* 页面容器 */
+.page-container {
+  min-height: 100vh;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+/* 卡片样式 */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 12px;
+}
+
+/* 主按钮 - 渐变背景 */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  background-size: 100% 100%;
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+  opacity: 0.9;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 灰色按钮 - 卖出等 */
+.btn-gray {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  background: #95a5a6;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.btn-gray:active {
+  transform: scale(0.97);
+  opacity: 0.9;
+}
+
+.btn-gray:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 输入框样式 */
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  background: #fafafa;
+}
+
+.form-input:focus {
+  border-color: #D4AF37;
+  background: #fff;
+}
+
+.form-input::placeholder {
+  color: #bbb;
+}
+
+/* 指标网格项 */
+.metric-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 8px;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.metric-cell .label {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.metric-cell .value {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* 买入/卖出标签 */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.badge.buy {
+  background: #27AE60;
+  color: #fff;
+}
+
+.badge.sell {
+  background: #E74C3C;
+  color: #fff;
+}
+
+/* 筛选胶囊按钮 */
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #fff;
+  color: #555;
+  white-space: nowrap;
+}
+
+.filter-btn.active {
+  border-color: #D4AF37;
+  background: #FFF8E7;
+  color: #D4AF37;
+  font-weight: 600;
+}
+
+/* 顶部渐变装饰条 */
+.gradient-bar {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #D4AF37, #F5D76E);
+  flex-shrink: 0;
+}
